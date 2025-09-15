@@ -7,6 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtCore import Qt
 
 
 class Ui_MainWindow(object):
@@ -742,11 +743,24 @@ class Ui_MainWindow(object):
         self.widget.setObjectName("widget")
         self.lineEdit = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.lineEdit.setGeometry(QtCore.QRect(10, 10, 371, 181))
-        self.lineEdit.setStyleSheet("background-color: rgba(255, 255, 255, 0.4);")
+        self.lineEdit.setStyleSheet("""
+            QLineEdit {
+                background-color: rgba(255, 255, 255, 0.4); /* Прозрачный белый фон */
+                color: orange;                               /* Цвет текста */
+                font-size: 30pt;                            /* Размер шрифта */
+                font-family: 'Segoe UI';                    /* Шрифт (можно заменить на любимый) */
+                font-weight: bold;                          /* Жирный текст */
+                border: 2px solid rgba(255, 255, 255, 0.6);  /* Полупрозрачная рамка */
+                border-radius: 6px;                         /* Скругление углов */
+                padding: 5px;                               /* Отступ внутри */
+                padding-top: 110px; 
+            }
+        """)
         self.lineEdit.setObjectName("lineEdit")
         self.widget.raise_()
         self.gridGroupBox.raise_()
         self.lineEdit.raise_()
+        self.lineEdit.setAlignment(Qt.AlignmentFlag.AlignLeft)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -774,11 +788,3 @@ class Ui_MainWindow(object):
         self.pushButton_4.setText(_translate("MainWindow", "="))
 
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec())
