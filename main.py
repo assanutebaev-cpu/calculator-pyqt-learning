@@ -1,10 +1,16 @@
-#main.py
-
 import sys
-from PyQt6.QtWidgets import QApplication
-from ui.ui import MainWindow
+from PyQt6.QtWidgets import QApplication, QMainWindow
+from ui.model_main import Ui_MainWindow
 
-app = QApplication(sys.argv)
-window = MainWindow()
-window.show()
-app.exec()
+
+class MyApp(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)  # Настройка интерфейса
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MyApp()
+    window.show()
+    sys.exit(app.exec())
