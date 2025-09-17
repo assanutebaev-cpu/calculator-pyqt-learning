@@ -1,13 +1,17 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow
-from ui.model_main import Ui_MainWindow
 
+from logic.logic import ButtonHandler
+from ui.ui import Ui_MainWindow
 
 class MyApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)  # Настройка интерфейса
+        self.setFixedSize(self.size())
+        self.logic = ButtonHandler(self.ui)
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
