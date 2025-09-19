@@ -1,6 +1,9 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtCore import Qt
-from logic.logic import ButtonHandler
+
+
+
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -23,7 +26,6 @@ class Ui_MainWindow(object):
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Ignored, QtWidgets.QSizePolicy.Policy.Ignored)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-
 
 
 
@@ -649,18 +651,18 @@ class Ui_MainWindow(object):
 "")
         self.three_button.setObjectName("3")
         self.gridLayout_5.addWidget(self.three_button, 4, 3, 1, 1)
-        self.percent_button = QtWidgets.QPushButton(parent=self.gridGroupBox)
+        self.erase_button = QtWidgets.QPushButton(parent=self.gridGroupBox)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Ignored, QtWidgets.QSizePolicy.Policy.Ignored)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.percent_button.sizePolicy().hasHeightForWidth())
-        self.percent_button.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.erase_button.sizePolicy().hasHeightForWidth())
+        self.erase_button.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Google Sans")
         font.setBold(True)
         font.setWeight(63)
-        self.percent_button.setFont(font)
-        self.percent_button.setStyleSheet("QPushButton {\n"
+        self.erase_button.setFont(font)
+        self.erase_button.setStyleSheet("QPushButton {\n"
 "    background-color: rgba(255, 255, 255, 0.60); /* лёгкая прозрачность */\n"
 "    border-radius: 24px;\n"
 "    border: 1px solid rgba(255, 255, 255, 0.4);\n"
@@ -687,8 +689,8 @@ class Ui_MainWindow(object):
 "    outline: none;\n"
 "}\n"
 "")
-        self.percent_button.setObjectName("/")
-        self.gridLayout_5.addWidget(self.percent_button, 2, 4, 1, 1)
+        self.erase_button.setObjectName("erase")
+        self.gridLayout_5.addWidget(self.erase_button, 2, 4, 1, 1)
         self.equal_button = QtWidgets.QPushButton(parent=self.gridGroupBox)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Ignored, QtWidgets.QSizePolicy.Policy.Ignored)
         sizePolicy.setHorizontalStretch(0)
@@ -787,6 +789,27 @@ class Ui_MainWindow(object):
         self.plus_button.setText(_translate("MainWindow", "+"))
         self.five_button.setText(_translate("MainWindow", "5"))
         self.three_button.setText(_translate("MainWindow", "3"))
-        self.percent_button.setText(_translate("MainWindow", "%"))
+        self.erase_button.setText(_translate("MainWindow", "<-"))
         self.equal_button.setText(_translate("MainWindow", "="))
 
+        self.one_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.two_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.three_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.four_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.five_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.six_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.seven_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.eighth_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.nine_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.clear_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.divide_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.plus_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.minus_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.multiply_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.clear_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.erase_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.equal_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.zero_button.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.lineEdit.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.widget.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.gridGroupBox.setFocusPolicy(Qt.FocusPolicy.NoFocus)

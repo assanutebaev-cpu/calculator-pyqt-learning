@@ -13,8 +13,13 @@ class MyApp(QMainWindow):
         self.logic = ButtonHandler(self.ui)
 
 
+    def keyPressEvent(self, event):
+        self.logic.handle_key_event(event)
+        super().keyPressEvent(event)
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MyApp()
     window.show()
     sys.exit(app.exec())
+
