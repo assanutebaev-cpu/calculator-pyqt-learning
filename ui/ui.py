@@ -1,9 +1,10 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtCore import Qt
+from pathlib import Path
 
-
-
-
+BASE_DIR = Path(__file__).resolve().parent.parent
+path_to_background = BASE_DIR / "background.png"
+path_str = path_to_background.as_posix()
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -730,18 +731,19 @@ class Ui_MainWindow(object):
 "    outline: none;\n"
 "}\n"
 "")
+
         self.equal_button.setObjectName("=")
         self.gridLayout_5.addWidget(self.equal_button, 3, 4, 3, 1)
         self.widget = QtWidgets.QWidget(parent=self.centralwidget)
         self.widget.setEnabled(False)
         self.widget.setGeometry(QtCore.QRect(0, 0, 391, 521))
-        self.widget.setStyleSheet("""
-            QWidget {
-                background-image: url("/home/assan/Desktop/PyQt6 learning/calculator/background.png");
+        self.widget.setStyleSheet(f"""
+            QWidget {{
+                background-image: url({path_str});
                 background-repeat: no-repeat;
                 background-position: center;
                 border-radius: 20px;
-            }
+            }}
         """)
 
         self.widget.setObjectName("widget")
